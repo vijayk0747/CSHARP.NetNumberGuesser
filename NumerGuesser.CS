@@ -6,6 +6,7 @@ namespace NumberGuesser
     {
         static void Main(string[] args)
         {
+            //App Data
             string appName = "Vijay's Number Guesser";
             string appVersion = "1.0.0";
             string appAuthor = "Vijay";
@@ -20,6 +21,7 @@ namespace NumberGuesser
 
             System.Threading.Thread.Sleep(3000);
 
+            //Entering the Game
             Console.WriteLine("What is your name?");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             string userName = Console.ReadLine();
@@ -27,8 +29,10 @@ namespace NumberGuesser
 
             Console.WriteLine("Hello {0}, Welcome to {1}...", userName, appName);
 
+            //Using a bigger while loop to allow for the use of the continue function
             while (runProg == 1)
             {
+                //Declaring vars
                 int guess = 0;
                 int numTries = 0;
                 System.Random random = new System.Random();
@@ -39,6 +43,7 @@ namespace NumberGuesser
 
                 Console.WriteLine("Guess a number between 1 and 100");
 
+                //Logic of the game
                 while (guess != correctNum)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -69,6 +74,7 @@ namespace NumberGuesser
                     }
                 }
 
+                //Messages after user wins
                 if (guess == correctNum)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -98,6 +104,7 @@ namespace NumberGuesser
                     }
                 }
 
+                //Allows for replayability.
                 Console.WriteLine("Do you want to play again? [Y or N]");
                 string answer = Console.ReadLine().ToUpper();
 
